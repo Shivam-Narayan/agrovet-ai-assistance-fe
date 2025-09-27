@@ -74,23 +74,6 @@ agrovet-ai-assistance/
 
 ---
 
-## 📸 Screenshots / Demo
-
-> Add screenshots or demo links here to showcase the UI.  
-
-### 🔹 Dashboard View
-![Dashboard Screenshot](./screenshots/dashboard.png)
-
-### 🔹 AI Assistance Chat
-![AI Chat Screenshot](./screenshots/ai-chat.png)
-
-### 🔹 Veterinary Module
-![Veterinary Screenshot](./screenshots/veterinary.png)
-
-*(Replace the above paths with actual images once available.)*  
-
----
-
 ## 🌐 Live Demo
 A live demo will be available soon!  
 (Deploy on **Netlify**, **Vercel**, or any hosting of choice and add the link here.)
@@ -116,7 +99,3 @@ A live demo will be available soon!
 ## 🤝 Contributing
 Contributions are welcome! Please fork the repository and submit a pull request.  
 
----
-
-## 📜 License
-This project is licensed under the **MIT License**.  
