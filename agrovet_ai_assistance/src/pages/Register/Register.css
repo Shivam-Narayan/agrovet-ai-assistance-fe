@@ -1,0 +1,385 @@
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+}
+
+/* Register Component CSS */
+.register-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom right, #f0fdf4, #ffffff, #fffbeb);
+  padding: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+}
+
+.register-wrapper {
+  max-width: 28rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Header */
+.header {
+  text-align: center;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.leaf-icon {
+  height: 2rem;
+  width: 2rem;
+  color: #16a34a;
+}
+
+.main-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Register Form */
+.form-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.form-title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 1.5rem 0;
+}
+
+/* Error Message */
+.error-message {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #b91c1c;
+}
+
+.error-text {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+/* Snackbar Notifications */
+.snackbar {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.snackbar-success {
+  background-color: #d1fae5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.snackbar-error {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+.snackbar-info {
+  background-color: #dbeafe;
+  color: #1e40af;
+  border: 1px solid #93c5fd;
+}
+
+.snackbar-close {
+  background: none;
+  border: none;
+  font-size: 1.125rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 0.5rem;
+  color: inherit;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.snackbar-close:hover {
+  opacity: 1;
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.25rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  outline: none;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.form-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #16a34a;
+  border-color: transparent;
+}
+
+.form-input::placeholder {
+  color: #9ca3af;
+}
+
+.form-input:read-only {
+  background-color: #f9fafb;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+/* Employee ID Container */
+.emp-id-container {
+  display: flex;
+  gap: 0.5rem;
+  align-items: stretch;
+}
+
+.emp-id-container .form-input {
+  flex: 1;
+}
+
+.know-button {
+  padding: 0.5rem 1rem;
+  background-color: #16a34a;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  min-width: fit-content;
+}
+
+.know-button:hover:not(:disabled) {
+  background-color: #15803d;
+}
+
+.know-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #16a34a, 0 0 0 4px rgba(22, 163, 74, 0.1);
+}
+
+.know-button:disabled {
+  background-color: #d1d5db;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Password Container */
+.password-container {
+  position: relative;
+}
+
+.password-input {
+  width: 100%;
+  padding: 0.5rem 2.5rem 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  outline: none;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.password-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #16a34a;
+  border-color: transparent;
+}
+
+.password-input::placeholder {
+  color: #9ca3af;
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 0.75rem;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-toggle:hover {
+  color: #4b5563;
+}
+
+/* Password Requirements */
+.password-requirements {
+  margin-top: 0.25rem;
+}
+
+.password-requirements small {
+  color: #6b7280;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+/* Submit Button */
+.submit-button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #16a34a;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.submit-button:hover:not(:disabled) {
+  background-color: #15803d;
+}
+
+.submit-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #16a34a, 0 0 0 4px rgba(22, 163, 74, 0.1);
+}
+
+.submit-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Login Link */
+.login-link {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.login-text {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.login-link-text {
+  color: #16a34a;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.login-link-text:hover {
+  color: #15803d;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .main-title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  
+  .form-container {
+    padding: 1.5rem;
+  }
+  
+  .emp-id-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .know-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-container {
+    padding: 0.5rem;
+  }
+  
+  .main-title {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  
+  .form-container {
+    padding: 1rem;
+  }
+  
+  .emp-id-container {
+    flex-direction: column;
+  }
+  
+  .password-requirements small {
+    font-size: 0.6875rem;
+  }
+}
