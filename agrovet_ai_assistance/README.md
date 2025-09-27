@@ -5,7 +5,7 @@ This guide will help you set up and run the project in just a few steps.
 ## 🚀 Steps to Run the Project
 
 ### Clone the Repository
-git clone https://github.com/sourcebitsllc/Ascendum_demo.git
+git clone https://github.com/Shivam-Narayan/agrovet-ai-assistance-fe.git
 
 
 ### Navigate into the Project Directory
