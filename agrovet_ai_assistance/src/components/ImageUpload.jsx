@@ -16,6 +16,19 @@ const ImageUpload = ({
   const fileInputRef = useRef(null);
   const videoRef = useRef(null);
 
+  const handleFileSelect = useCallback((file) => {
+    if (file.type.startsWith('image/')) {
+      setSelectedImage(file);
+      onImageSelect(file);
+      
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        setImagePreview(e.target?.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  }, [onImageSelect]);
+
   const handleDrag = useCallback((e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -34,20 +47,7 @@ const ImageUpload = ({
     if (e.dataTransfer.files && e.dataTransfer.files[0]) {
       handleFileSelect(e.dataTransfer.files[0]);
     }
-  }, []);
-
-  const handleFileSelect = (file) => {
-    if (file.type.startsWith('image/')) {
-      setSelectedImage(file);
-      onImageSelect(file);
-      
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        setImagePreview(e.target?.result);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
+  }, [handleFileSelect]);
 
   const handleFileInput = (e) => {
     if (e.target.files && e.target.files[0]) {
