@@ -1,0 +1,439 @@
+/* Main Container */
+.plant-disease-page {
+  padding: 2rem;
+  background-color: #f9fafb;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+/* Header Section */
+.header-section {
+  margin-bottom: 2rem;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.header-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #10B981;
+}
+
+.header-title h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #10B981;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.description {
+  color: #4b5563;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+.alert-box {
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.alert-box p {
+  color: #065f46;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+/* Key Features */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.feature-card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.feature-icon {
+  width: 2rem;
+  height: 2rem;
+  margin: 0 auto 0.5rem;
+}
+
+.feature-icon.green {
+  color: #10B981;
+}
+
+.feature-icon.blue {
+  color: #3b82f6;
+}
+
+.feature-icon.yellow {
+  color: #F59E0B;
+}
+
+.feature-card h3 {
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+}
+
+.feature-card p {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Upload Section */
+.upload-section {
+  margin-bottom: 2rem;
+}
+
+.upload-label {
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+/* Analysis Results */
+.analysis-results {
+  background-color: white;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.results-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.results-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #10B981;
+}
+
+.results-header h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .results-grid {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+/* Main Result Card */
+.result-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.result-card {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid;
+  text-align: center;
+}
+
+.result-card.disease-yellow {
+  background-color: #fffbeb;
+  border-color: #fde68a;
+}
+
+.result-card.disease-green {
+  background-color: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.result-card.disease-red {
+  background-color: #fef2f2;
+  border-color: #fecaca;
+}
+
+.result-disease-icon {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 1rem;
+}
+
+.text-yellow {
+  color: #92400e;
+}
+
+.text-green {
+  color: #065f46;
+}
+
+.text-red {
+  color: #991b1b;
+}
+
+.result-card h4 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.plant-name {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.75rem;
+}
+
+.severity-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.severity-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.severity-icon.green {
+  color: #10B981;
+}
+
+.severity-icon.yellow {
+  color: #F59E0B;
+}
+
+.severity-icon.red {
+  color: #DC2626;
+}
+
+.severity-icon.gray {
+  color: #6b7280;
+}
+
+.severity-indicator span {
+  font-weight: 500;
+}
+
+.confidence-score {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.confidence-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Detail Cards */
+.result-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.details-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .details-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.detail-card {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  background-color: white;
+}
+
+.detail-card.treatment {
+  border: 1px solid;
+}
+
+.detail-card.treatment.disease-yellow {
+  background-color: #fffbeb;
+  border-color: #fde68a;
+}
+
+.detail-card.treatment.disease-green {
+  background-color: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.detail-card.treatment.disease-red {
+  background-color: #fef2f2;
+  border-color: #fecaca;
+}
+
+.detail-card.prevention {
+  background-color: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.detail-title {
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.prevention-title {
+  color: #1e40af;
+}
+
+.detail-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.detail-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.detail-list li {
+  font-size: 0.875rem;
+  color: #6b7280;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.bullet {
+  width: 0.25rem;
+  height: 0.25rem;
+  border-radius: 50%;
+  margin-top: 0.5rem;
+  flex-shrink: 0;
+}
+
+.bullet.red {
+  background-color: #ef4444;
+}
+
+.bullet.yellow {
+  background-color: #F59E0B;
+}
+
+.detail-list-checkbox {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.detail-list-checkbox li {
+  font-size: 0.875rem;
+  color: #374151;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.prevention-list li {
+  color: #1e40af;
+}
+
+.checkbox {
+  width: 1rem;
+  height: 1rem;
+  background-color: white;
+  border-radius: 9999px;
+  border: 2px solid currentColor;
+  margin-top: 0.125rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.checkbox::after {
+  content: '';
+  width: 0.25rem;
+  height: 0.25rem;
+  background-color: currentColor;
+  border-radius: 50%;
+}
+
+.checkbox.blue {
+  border-color: #3b82f6;
+}
+
+.checkbox.blue::after {
+  background-color: #3b82f6;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .plant-disease-page {
+    padding: 1rem;
+  }
+
+  .header-title h1 {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .analysis-results {
+    padding: 1rem;
+  }
+}

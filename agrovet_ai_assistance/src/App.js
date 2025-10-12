@@ -10,6 +10,7 @@ import CottonPests from './pages/CottonPests/CottonPests';
 import TomatoRipeness from './pages/TomatoRipeness/TomatoRipeness';
 import BananaRipeness from './pages/BananaRipeness/BananaRipeness';
 import MangoRipeness from './pages/MangoRipeness/MangoRipeness';
+import History from './pages/History/History';
 
 // Private Route component to protect authenticated routes
 const PrivateRoute = ({ children }) => {
@@ -89,6 +90,14 @@ function App() {
               PrivateRoute,
               null,
               React.createElement(MangoRipeness, null)
+            )
+          }),
+          React.createElement(Route, {
+            path: '/history',
+            element: React.createElement(
+              PrivateRoute,
+              null,
+              React.createElement(History, null)
             )
           }),
           

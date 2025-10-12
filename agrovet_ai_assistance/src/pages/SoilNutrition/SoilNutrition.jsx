@@ -180,7 +180,7 @@ const SoilNutrition = () => {
           React.createElement(
             'p',
             { className: 'upload-instruction' },
-            'Choose an image...'
+            'Choose an image of your soil sample:'
           ),
           React.createElement(ImageUpload, {
             onImageSelect: handleImageSelect,

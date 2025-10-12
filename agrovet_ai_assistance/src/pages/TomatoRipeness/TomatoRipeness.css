@@ -1,102 +1,387 @@
-/* General Layout */
-.tomato-container {
+/* Main Container */
+.tomato-ripeness-page {
   padding: 2rem;
-  max-width: 1100px;
-  margin: 0 auto;
-  font-family: 'Inter', sans-serif;
-  color: #1f2937; /* gray-900 */
+  background-color: #f9fafb;
+  min-height: 100vh;
 }
 
-/* Header */
-.tomato-header h1 {
-  font-size: 2rem;
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+/* Header Section */
+.header-section {
+  margin-bottom: 2rem;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.header-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #DC2626;
+}
+
+.header-title h1 {
+  font-size: 1.875rem;
   font-weight: 700;
   color: #111827;
+  margin: 0;
 }
 
-.tomato-subtitle {
-  color: #dc2626; /* red-600 */
+.subtitle {
+  font-size: 1.25rem;
+  color: #DC2626;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
-/* Ripeness Stage Cards */
-.ripeness-card {
-  background: #fff;
-  border: 1px solid #e5e7eb; /* gray-200 */
-  border-radius: 0.5rem;
-  padding: 1rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.description {
+  color: #4b5563;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
 }
 
-.ripeness-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+/* Ripeness Stages Grid */
+.ripeness-stages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stage-card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+.stage-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.stage-indicator {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.stage-indicator.red {
+  background-color: #ef4444;
+}
+
+.stage-indicator.orange {
+  background-color: #f97316;
+}
+
+.stage-indicator.green {
+  background-color: #22c55e;
+}
+
+.stage-indicator.dark-red {
+  background-color: #991b1b;
+}
+
+.stage-indicator.gray {
+  background-color: #4b5563;
+}
+
+.stage-name {
+  font-weight: 600;
+  color: #111827;
+}
+
+.stage-description {
+  font-size: 0.875rem;
+  color: #6b7280;
+  line-height: 1.625;
+  margin: 0;
+}
+
+/* Info Box */
+.info-box {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: #fef2f2;
+  border-radius: 0.5rem;
+  border: 1px solid #fecaca;
+}
+
+.info-box p {
+  color: #991b1b;
+  text-align: center;
+  font-weight: 500;
+  margin: 0;
 }
 
 /* Upload Section */
 .upload-section {
-  background: #fff;
-  border: 2px dashed #d1d5db; /* gray-300 */
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  text-align: center;
-  cursor: pointer;
-  transition: border-color 0.2s ease;
+  margin-bottom: 2rem;
 }
 
-.upload-section:hover {
-  border-color: #dc2626; /* red-600 */
+.upload-label {
+  color: #374151;
+  margin-bottom: 1rem;
 }
 
-/* Analysis Result Box */
-.analysis-result {
-  background: #fff;
+/* Analysis Results */
+.analysis-results {
+  background-color: white;
+  border-radius: 0.5rem;
   border: 1px solid #e5e7eb;
-  border-radius: 0.75rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
-  animation: fadeIn 0.5s ease;
 }
 
-/* Confidence Badge */
-.confidence-badge {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-top: 0.5rem;
-}
-
-/* Lists */
-.characteristics-list,
-.recommendations-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-.characteristics-list li,
-.recommendations-list li {
+.results-header {
   display: flex;
-  align-items: flex-start;
-  font-size: 0.875rem;
-  color: #4b5563; /* gray-600 */
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.results-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #10B981;
+}
+
+.results-header h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .results-grid {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+/* Main Result Card */
+.result-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.result-card {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid;
+  text-align: center;
+}
+
+.result-card.tomato-red {
+  background-color: #fef2f2;
+  border-color: #fecaca;
+}
+
+.result-card.tomato-orange {
+  background-color: #fff7ed;
+  border-color: #fed7aa;
+}
+
+.result-card.tomato-green {
+  background-color: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.tomato-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.result-card h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
-/* Small dot bullets */
-.characteristics-list li::before,
-.recommendations-list li::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  background: #9ca3af; /* gray-400 */
-  border-radius: 999px;
-  margin-right: 0.75rem;
-  margin-top: 0.4rem;
+.text-red {
+  color: #991b1b;
+}
+
+.text-orange {
+  color: #9a3412;
+}
+
+.text-green {
+  color: #065f46;
+}
+
+.confidence-score {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.confidence-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Nutritional Card */
+.nutritional-card {
+  padding: 1rem;
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+}
+
+.nutritional-title {
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.star-icon {
+  width: 1rem;
+  height: 1rem;
+  color: #EAB308;
+}
+
+.nutritional-card p {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Result Details */
+.result-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.description-box {
+  font-size: 0.875rem;
+  line-height: 1.625;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.description-box.tomato-red {
+  color: #991b1b;
+  background-color: #fef2f2;
+}
+
+.description-box.tomato-orange {
+  color: #9a3412;
+  background-color: #fff7ed;
+}
+
+.description-box.tomato-green {
+  color: #065f46;
+  background-color: #f0fdf4;
+}
+
+.details-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .details-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.detail-card {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  background-color: white;
+}
+
+.detail-title {
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.detail-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.detail-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.detail-list li {
+  font-size: 0.875rem;
+  color: #6b7280;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.bullet {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  margin-top: 0.5rem;
   flex-shrink: 0;
 }
 
-/* Fade-in Animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+.bullet.gray {
+  background-color: #9ca3af;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .tomato-ripeness-page {
+    padding: 1rem;
+  }
+
+  .header-title h1 {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+  }
+
+  .ripeness-stages-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .analysis-results {
+    padding: 1rem;
+  }
+
+  .tomato-icon {
+    font-size: 2rem;
+  }
 }

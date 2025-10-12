@@ -1,12 +1,12 @@
-/* SoilNutrition Component Styles */
-
 /* Main Container */
 .soil-nutrition-container {
   padding: 2rem;
+  background-color: #f9fafb;
+  min-height: 100vh;
 }
 
 .soil-nutrition-content {
-  max-width: 64rem;
+  max-width: 1024px;
   margin: 0 auto;
 }
 
@@ -25,41 +25,40 @@
 .header-icon {
   width: 2rem;
   height: 2rem;
-  color: #d97706;
+  color: #8B4513;
 }
 
 .main-title {
   font-size: 1.875rem;
   font-weight: 700;
   color: #111827;
-  line-height: 1.25;
+  margin: 0;
 }
 
 .sub-title {
   font-size: 1.25rem;
-  color: #d97706;
+  color: #8B4513;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
 .description-text {
   color: #4b5563;
-  line-height: 1.625;
+  line-height: 1.75;
   margin-bottom: 1rem;
 }
 
 .info-box {
-  background-color: #fffbeb;
-  border: 1px solid #fde68a;
+  background-color: #fef3c7;
+  border: 1px solid #fcd34d;
   border-radius: 0.5rem;
   padding: 1rem;
-  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .info-text {
   color: #92400e;
   font-size: 0.875rem;
-  line-height: 1.5;
   margin: 0;
 }
 
@@ -77,14 +76,8 @@
 
 .soil-types-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
-}
-
-@media (min-width: 768px) {
-  .soil-types-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
 
 .soil-type-card {
@@ -92,25 +85,35 @@
   padding: 1rem;
   border-radius: 0.5rem;
   border: 1px solid #e5e7eb;
-  text-align: center;
-  transition: all 0.2s ease;
-}
-
-.soil-type-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .soil-type-icon {
   width: 2rem;
   height: 2rem;
-  background: linear-gradient(135deg, #f59e0b, #eab308);
   border-radius: 50%;
-  margin: 0 auto 0.5rem auto;
+  flex-shrink: 0;
+}
+
+.soil-type-card:nth-child(1) .soil-type-icon {
+  background-color: #D2B48C; /* Alluvial - tan/beige */
+}
+
+.soil-type-card:nth-child(2) .soil-type-icon {
+  background-color: #2F4F4F; /* Black - dark slate gray */
+}
+
+.soil-type-card:nth-child(3) .soil-type-icon {
+  background-color: #8B4513; /* Clay - saddle brown */
+}
+
+.soil-type-card:nth-child(4) .soil-type-icon {
+  background-color: #CD5C5C; /* Red - indian red */
 }
 
 .soil-type-name {
-  font-size: 0.875rem;
   font-weight: 500;
   color: #374151;
 }
@@ -123,7 +126,6 @@
 .upload-instruction {
   color: #374151;
   margin-bottom: 1rem;
-  font-weight: 500;
 }
 
 /* Analysis Results */
@@ -131,7 +133,7 @@
   background-color: white;
   border-radius: 0.5rem;
   border: 1px solid #e5e7eb;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
 }
 
@@ -145,13 +147,14 @@
 .results-icon {
   width: 1.5rem;
   height: 1.5rem;
-  color: #059669;
+  color: #10B981;
 }
 
 .results-title {
   font-size: 1.25rem;
   font-weight: 600;
   color: #111827;
+  margin: 0;
 }
 
 .results-grid {
@@ -167,104 +170,108 @@
   }
 }
 
-/* Results Left Column */
+/* Left Column - Soil Type & pH */
 .results-left {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .soil-type-result {
-  text-align: center;
   padding: 1.5rem;
+  background-color: #f9fafb;
   border-radius: 0.5rem;
-  border: 1px solid #e5e7eb;
+  text-align: center;
 }
 
 .soil-color-sample {
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
-  margin: 0 auto 1rem auto;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  margin: 0 auto 1rem;
+  border: 3px solid white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .detected-soil-type {
-  font-size: 1.125rem;
-  font-weight: 600;
+  font-size: 1.25rem;
+  font-weight: 700;
   color: #111827;
   margin-bottom: 0.5rem;
 }
 
 .detection-note {
   font-size: 0.875rem;
-  color: #4b5563;
+  color: #6b7280;
   margin: 0;
 }
 
 /* pH Analysis */
 .ph-analysis {
-  padding: 1rem;
+  padding: 1.5rem;
+  background-color: #f9fafb;
   border-radius: 0.5rem;
-  border: 1px solid #e5e7eb;
 }
 
 .ph-header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  margin-bottom: 0.5rem;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .ph-label {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #374151;
+  font-weight: 600;
+  color: #111827;
 }
 
 .ph-status {
-  padding: 0.25rem 0.5rem;
-  font-size: 0.75rem;
-  font-weight: 500;
+  padding: 0.25rem 0.75rem;
   border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
 }
 
-.ph-acidic {
-  color: #dc2626;
-  background-color: #fef2f2;
+.ph-status.ph-acidic {
+  background-color: #fee2e2;
+  color: #991b1b;
 }
 
-.ph-neutral {
-  color: #059669;
-  background-color: #f0fdf4;
+.ph-status.ph-neutral {
+  background-color: #dbeafe;
+  color: #1e40af;
 }
 
-.ph-alkaline {
-  color: #2563eb;
-  background-color: #eff6ff;
+.ph-status.ph-alkaline {
+  background-color: #e0e7ff;
+  color: #4338ca;
 }
 
 .ph-value {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: #111827;
-  margin-bottom: 0.25rem;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .ph-scale {
   width: 100%;
   height: 0.5rem;
-  background-color: #e5e7eb;
+  background: linear-gradient(to right, #ef4444, #fbbf24, #3b82f6);
   border-radius: 9999px;
-  overflow: hidden;
-  margin-bottom: 0.25rem;
+  position: relative;
+  margin-bottom: 0.5rem;
 }
 
 .ph-indicator {
-  height: 100%;
-  background: linear-gradient(90deg, #ef4444, #10b981, #3b82f6);
+  position: absolute;
+  right: 0;
+  top: -0.25rem;
+  height: 1rem;
+  width: 0.25rem;
+  background-color: #111827;
   border-radius: 9999px;
-  transition: width 0.3s ease;
 }
 
 .ph-scale-labels {
@@ -274,11 +281,11 @@
   color: #6b7280;
 }
 
-/* Results Right Column */
+/* Right Column - Nutrients & Metrics */
 .results-right {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .nutrients-section,
@@ -306,7 +313,7 @@
 .metrics-list {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
 .nutrient-item,
@@ -314,59 +321,62 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0.5rem;
+  background-color: #f9fafb;
+  border-radius: 0.25rem;
 }
 
 .nutrient-name,
 .metric-name {
   font-size: 0.875rem;
-  color: #4b5563;
-  text-transform: capitalize;
+  color: #374151;
+  font-weight: 500;
 }
 
 .nutrient-level {
-  padding: 0.25rem 0.5rem;
-  font-size: 0.75rem;
-  font-weight: 500;
+  padding: 0.25rem 0.75rem;
   border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
 }
 
-.nutrient-high {
-  color: #059669;
-  background-color: #f0fdf4;
+.nutrient-level.nutrient-high {
+  background-color: #d1fae5;
+  color: #065f46;
 }
 
-.nutrient-medium {
-  color: #d97706;
-  background-color: #fffbeb;
+.nutrient-level.nutrient-medium {
+  background-color: #fef3c7;
+  color: #92400e;
 }
 
-.nutrient-low {
-  color: #dc2626;
-  background-color: #fef2f2;
+.nutrient-level.nutrient-low {
+  background-color: #fee2e2;
+  color: #991b1b;
 }
 
-.nutrient-default {
-  color: #4b5563;
+.nutrient-level.nutrient-default {
   background-color: #f3f4f6;
+  color: #374151;
 }
 
 .metric-value {
   font-size: 0.875rem;
-  font-weight: 500;
   color: #111827;
+  font-weight: 600;
 }
 
 /* Recommendations Section */
 .recommendations-section {
   padding: 1rem;
-  background-color: #f0fdf4;
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
   border-radius: 0.5rem;
-  border: 1px solid #bbf7d0;
 }
 
 .recommendations-header {
   font-weight: 600;
-  color: #065f46;
+  color: #1e40af;
   margin-bottom: 0.75rem;
   display: flex;
   align-items: center;
@@ -379,12 +389,12 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
 .recommendation-item {
   font-size: 0.875rem;
-  color: #065f46;
+  color: #1e40af;
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
@@ -393,14 +403,14 @@
 .recommendation-bullet {
   width: 0.5rem;
   height: 0.5rem;
-  background-color: #059669;
+  background-color: #3b82f6;
   border-radius: 50%;
-  margin-top: 0.5rem;
+  margin-top: 0.375rem;
   flex-shrink: 0;
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .soil-nutrition-container {
     padding: 1rem;
   }
@@ -413,17 +423,7 @@
     font-size: 1.125rem;
   }
 
-  .header-title {
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-  }
-
   .soil-types-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .results-grid {
     grid-template-columns: 1fr;
   }
 
@@ -431,94 +431,7 @@
     padding: 1rem;
   }
 
-  .ph-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  .nutrient-item,
-  .metric-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .main-title {
-    font-size: 1.25rem;
-  }
-
-  .soil-types-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .soil-type-card {
-    padding: 0.75rem;
-  }
-
-  .soil-color-sample {
-    width: 4rem;
-    height: 4rem;
-  }
-
   .ph-value {
-    font-size: 1.5rem;
-  }
-}
-
-/* Loading and Animation States */
-.soil-type-card,
-.analysis-results {
-  animation: fadeInUp 0.6s ease-out;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Focus and Accessibility */
-.soil-type-card:focus-visible {
-  outline: 2px solid #059669;
-  outline-offset: 2px;
-}
-
-/* High Contrast Mode */
-@media (prefers-contrast: high) {
-  .info-box {
-    border-color: #000000;
-    background-color: #ffffff;
-  }
-  
-  .soil-type-card {
-    border-color: #000000;
-  }
-  
-  .analysis-results {
-    border-color: #000000;
-  }
-}
-
-/* Reduced Motion */
-@media (prefers-reduced-motion: reduce) {
-  .soil-type-card,
-  .analysis-results {
-    animation: none;
-  }
-  
-  .soil-type-card:hover {
-    transform: none;
-  }
-  
-  .ph-indicator {
-    transition: none;
+    font-size: 2rem;
   }
 }

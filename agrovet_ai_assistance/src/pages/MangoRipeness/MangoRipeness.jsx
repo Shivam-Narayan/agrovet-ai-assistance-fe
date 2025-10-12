@@ -113,22 +113,22 @@ const MangoRipeness = () => {
 
   return (
     <Layout>
-      <div className="p-8">
-        <div className="max-w-4xl mx-auto">
+      <div className="mango-ripeness-container">
+        <div className="mango-max-width">
           {/* Header */}
-          <div className="mb-8">
-            <div className="flex items-center space-x-3 mb-4">
-              <Grape className="h-8 w-8 text-orange-600" />
-              <h1 className="text-3xl font-bold text-gray-900">Mango Ripeness Detection</h1>
+          <div className="mango-header">
+            <div className="mango-title-wrapper">
+              <Grape className="icon-lg text-orange-600" />
+              <h1 className="mango-title">Mango Ripeness Detection</h1>
             </div>
-            <h2 className="text-xl text-orange-600 font-semibold mb-4">King of Fruits at Perfect Timing</h2>
-            <p className="text-gray-600 leading-relaxed mb-6">
+            <h2 className="mango-subtitle">King of Fruits at Perfect Timing</h2>
+            <p className="mango-description">
               Evaluate mango maturity with precision for optimal harvesting and consumption. Our AI system analyzes 
               color, texture, and visual indicators to determine the perfect ripeness level for your mangoes, 
               ensuring you enjoy them at their peak flavor and nutritional value.
             </p>
-            <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 mb-6">
-              <p className="text-orange-800 text-sm">
+            <div className="mango-info-box">
+              <p className="mango-info-text">
                 Mango ripeness is crucial for both taste and texture. Unlike many fruits, mangoes can be picked 
                 slightly underripe and will continue to ripen, developing their characteristic sweetness and aroma.
               </p>
@@ -136,31 +136,31 @@ const MangoRipeness = () => {
           </div>
 
           {/* Ripeness Indicators */}
-          <div className="mb-8">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Key Ripeness Indicators:</h3>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              <div className="bg-white p-4 rounded-lg border border-gray-200 text-center">
-                <div className="w-8 h-8 bg-gradient-to-r from-green-400 to-yellow-500 rounded-full mx-auto mb-2"></div>
-                <span className="text-sm font-medium text-gray-700">Color Change</span>
+          <div className="indicators-section">
+            <h3 className="indicators-title">Key Ripeness Indicators:</h3>
+            <div className="indicators-grid">
+              <div className="indicator-card">
+                <div className="indicator-circle gradient-green-yellow"></div>
+                <span className="indicator-label">Color Change</span>
               </div>
-              <div className="bg-white p-4 rounded-lg border border-gray-200 text-center">
-                <div className="w-8 h-8 bg-gradient-to-r from-orange-400 to-red-500 rounded-full mx-auto mb-2"></div>
-                <span className="text-sm font-medium text-gray-700">Texture</span>
+              <div className="indicator-card">
+                <div className="indicator-circle gradient-orange-red"></div>
+                <span className="indicator-label">Texture</span>
               </div>
-              <div className="bg-white p-4 rounded-lg border border-gray-200 text-center">
-                <div className="w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full mx-auto mb-2"></div>
-                <span className="text-sm font-medium text-gray-700">Aroma</span>
+              <div className="indicator-card">
+                <div className="indicator-circle gradient-purple-pink"></div>
+                <span className="indicator-label">Aroma</span>
               </div>
-              <div className="bg-white p-4 rounded-lg border border-gray-200 text-center">
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full mx-auto mb-2"></div>
-                <span className="text-sm font-medium text-gray-700">Firmness</span>
+              <div className="indicator-card">
+                <div className="indicator-circle gradient-blue-indigo"></div>
+                <span className="indicator-label">Firmness</span>
               </div>
             </div>
           </div>
 
           {/* Upload Section */}
-          <div className="mb-8">
-            <p className="text-gray-700 mb-4">Upload an image of your mango:</p>
+          <div className="mango-upload-section">
+            <p className="mango-upload-label">Upload an image of your mango:</p>
             <ImageUpload
               onImageSelect={handleImageSelect}
               onAnalyze={handleAnalyze}
@@ -170,103 +170,103 @@ const MangoRipeness = () => {
 
           {/* Analysis Results */}
           {analysisResult && (
-            <div className="bg-white rounded-lg border border-gray-200 shadow-lg p-6">
-              <div className="flex items-center space-x-3 mb-6">
-                <CheckCircle className="h-6 w-6 text-green-600" />
-                <h3 className="text-xl font-semibold text-gray-900">Mango Analysis Complete</h3>
+            <div className="mango-analysis-results">
+              <div className="mango-analysis-header">
+                <CheckCircle className="icon-md text-green-600" />
+                <h3 className="mango-analysis-title">Mango Analysis Complete</h3>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <div className="mango-analysis-grid">
                 {/* Main Result */}
-                <div className="lg:col-span-1">
-                  <div className={`p-6 rounded-lg border ${analysisResult.bgColor} text-center`}>
-                    <div className="text-4xl mb-3">{analysisResult.icon}</div>
-                    <h4 className={`text-xl font-bold ${analysisResult.textColor} mb-2`}>
+                <div className="mango-result-main">
+                  <div className={`mango-stage-card ${analysisResult.bgColor}`}>
+                    <div className="mango-stage-icon">{analysisResult.icon}</div>
+                    <h4 className={`mango-stage-name ${analysisResult.textColor}`}>
                       {analysisResult.stage}
                     </h4>
-                    <div className={`text-3xl font-bold ${analysisResult.textColor} mb-2`}>
+                    <div className={`mango-confidence ${analysisResult.textColor}`}>
                       {analysisResult.confidence}%
                     </div>
-                    <p className="text-sm text-gray-600">Accuracy</p>
+                    <p className="mango-confidence-label">Accuracy</p>
                   </div>
 
-                  <div className="mt-4 space-y-3">
-                    <div className="p-3 bg-gray-50 rounded-lg">
-                      <div className="text-xs text-gray-500 uppercase tracking-wider">Texture</div>
-                      <div className="font-medium text-sm">{analysisResult.texture}</div>
+                  <div className="mango-metrics">
+                    <div className="mango-metric-item">
+                      <div className="metric-label">Texture</div>
+                      <div className="metric-value">{analysisResult.texture}</div>
                     </div>
-                    <div className="p-3 bg-gray-50 rounded-lg">
-                      <div className="text-xs text-gray-500 uppercase tracking-wider">Aroma</div>
-                      <div className="font-medium text-sm">{analysisResult.aroma}</div>
+                    <div className="mango-metric-item">
+                      <div className="metric-label">Aroma</div>
+                      <div className="metric-value">{analysisResult.aroma}</div>
                     </div>
-                    <div className="p-3 bg-gray-50 rounded-lg">
-                      <div className="text-xs text-gray-500 uppercase tracking-wider">Sugar Content</div>
-                      <div className="font-medium text-sm">{analysisResult.sugarContent}</div>
+                    <div className="mango-metric-item">
+                      <div className="metric-label">Sugar Content</div>
+                      <div className="metric-value">{analysisResult.sugarContent}</div>
                     </div>
-                    <div className="p-3 bg-gray-50 rounded-lg">
-                      <div className="text-xs text-gray-500 uppercase tracking-wider">Shelf Life</div>
-                      <div className="font-medium text-sm">{analysisResult.shelfLife}</div>
+                    <div className="mango-metric-item">
+                      <div className="metric-label">Shelf Life</div>
+                      <div className="metric-value">{analysisResult.shelfLife}</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Detailed Information */}
-                <div className="lg:col-span-2 space-y-6">
+                <div className="mango-result-details">
                   <div>
-                    <p className={`text-sm ${analysisResult.textColor} leading-relaxed p-4 rounded-lg ${analysisResult.bgColor}`}>
+                    <p className={`mango-result-description ${analysisResult.textColor} ${analysisResult.bgColor}`}>
                       {analysisResult.description}
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="mango-detail-grid">
                     {/* Characteristics */}
-                    <div className="p-4 rounded-lg border border-gray-200">
-                      <h5 className="font-semibold text-gray-900 mb-3 flex items-center">
-                        <Clock className="h-4 w-4 mr-2" />
+                    <div className="mango-detail-card">
+                      <h5 className="mango-detail-title">
+                        <Clock className="mango-detail-icon" />
                         Physical Characteristics
                       </h5>
-                      <ul className="space-y-2">
+                      <div className="mango-detail-list">
                         {analysisResult.characteristics.map((char, index) => (
-                          <li key={index} className="text-sm text-gray-600 flex items-start">
-                            <div className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                          <div key={index} className="mango-detail-item">
+                            <div className="mango-bullet mango-bullet-gray"></div>
                             {char}
-                          </li>
+                          </div>
                         ))}
-                      </ul>
+                      </div>
                     </div>
 
                     {/* Best Uses */}
-                    <div className="p-4 rounded-lg border border-gray-200">
-                      <h5 className="font-semibold text-gray-900 mb-3 flex items-center">
-                        <Star className="h-4 w-4 mr-2" />
+                    <div className="mango-detail-card">
+                      <h5 className="mango-detail-title">
+                        <Star className="mango-detail-icon" />
                         Recommended Uses
                       </h5>
-                      <ul className="space-y-2">
+                      <div className="mango-detail-list">
                         {analysisResult.uses.map((use, index) => (
-                          <li key={index} className="text-sm text-gray-600 flex items-start">
-                            <div className={`w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0`} style={{ backgroundColor: analysisResult.color }}></div>
+                          <div key={index} className="mango-detail-item">
+                            <div className="mango-bullet" style={{ backgroundColor: analysisResult.color }}></div>
                             {use}
-                          </li>
+                          </div>
                         ))}
-                      </ul>
+                      </div>
                     </div>
                   </div>
 
                   {/* Nutritional Information */}
-                  <div className={`p-4 rounded-lg border ${analysisResult.bgColor}`}>
-                    <h5 className={`font-semibold ${analysisResult.textColor} mb-2 flex items-center`}>
-                      <AlertTriangle className="h-4 w-4 mr-2" />
+                  <div className={`mango-nutritional-box ${analysisResult.bgColor}`}>
+                    <h5 className={`mango-nutritional-title ${analysisResult.textColor}`}>
+                      <AlertTriangle className="mango-detail-icon" />
                       Nutritional Profile
                     </h5>
-                    <p className="text-sm text-gray-700">{analysisResult.nutritionalValue}</p>
+                    <p className="mango-nutritional-text">{analysisResult.nutritionalValue}</p>
                   </div>
                 </div>
               </div>
 
-              {/* Mango Facts */}
-              <div className="mt-6 p-4 bg-gradient-to-r from-orange-50 to-yellow-50 border border-orange-200 rounded-lg">
-                <h5 className="font-semibold text-orange-900 mb-3">🥭 Mango Mastery Tips</h5>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-orange-800">
+              {/* Mango Tips */}
+              <div className="mango-tips-section">
+                <h5 className="mango-tips-title">🥭 Mango Mastery Tips</h5>
+                <div className="mango-tips-grid">
                   <div>
                     <strong>Ripening:</strong> Store at room temperature, then refrigerate when ripe
                   </div>
